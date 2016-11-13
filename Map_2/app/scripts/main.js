@@ -2,17 +2,18 @@ $(function(){
 	
 	var worldMap;
 	var mouse = { x: 0, y: 0 }
+	var worldTime = 0;
 	
 	function Map() {
 		
 		this.WIDTH       = window.innerWidth; 
 		this.HEIGHT      = window.innerHeight;  
 		
-		this.VIEW_ANGLE  = 45;
+		this.VIEW_ANGLE  = 80;
 		this.NEAR        = 0.1; 
 		this.FAR         = 10000;
 		this.CAMERA_X    = 0;
-		this.CAMERA_Y    = 1000;
+		this.CAMERA_Y    = 800;
 		this.CAMERA_Z    = 500;
 		this.CAMERA_LX   = 0;
 		this.CAMERA_LY   = 0;
@@ -38,7 +39,7 @@ $(function(){
 				this.path = d3.geo.path().projection(this.mercator);
 				
 				var translate = this.mercator.translate();
-				translate[0] = 500;
+				translate[0] = 450;
 				translate[1] = 0;
 				
 				this.mercator.translate(translate);
@@ -54,7 +55,7 @@ $(function(){
 				this.renderer = new THREE.WebGLRenderer({
 					antialias : true
 				});
-				this.renderer.setClearColorHex( 0xBBBBBB, 1 );
+				this.renderer.setClearColorHex( 0x181D21, 1 );
 			} else {
 				this.renderer = new THREE.CanvasRenderer();
 			}
@@ -158,7 +159,8 @@ $(function(){
 			}
 			
 			multiplier = (1.0/366)*multiplier;
-			return multiplier*0xffffff;
+			// return multiplier*0xffffff;
+			return 0x91a5ad
 		},
 		
 		setCameraPosition: function(x, y, z, lx, lz) {	
@@ -240,8 +242,7 @@ $(function(){
 	};
 
 	function init() {
-        console.log('here');
-		
+		createTimeline();
 		$.when(	$.getJSON("data/countries.json") ).then(function(data){ 
 			
 			worldMap = new Map();
@@ -250,7 +251,7 @@ $(function(){
 			worldMap.init_tree();
 			
 			worldMap.add_light(0, 3000, 0, 1.0, 0xFFFFFF);		
-			worldMap.add_plain(1400, 700, 30, 0xEEEEEE);
+			worldMap.add_plain(1400, 700, 30, 0x23292d);
 			
 			worldMap.add_countries(data);
 			
@@ -259,11 +260,12 @@ $(function(){
 	
 			function tick(timestamp) {
 				worldMap.animate();
+				worldTime++;
 				
 				if(worldMap.INTERSECTED) {
 					$('#country-name').html(worldMap.INTERSECTED.name);
 				} else {
-					$('#country-name').html("move mouse over map");
+					$('#country-name').css({top: -1000, left: -1000});
 				}
 				
 				onFrame(tick);
@@ -276,13 +278,26 @@ $(function(){
 			
 		});
 	}
+
+	function createTimeline(){
+		$('#ts').TimeSlider({
+			start_timestamp: -602294400,
+			end_timestamp: 2553465600,
+			hours_per_ruler: 48,
+			update_timestamp_interval: 1000,
+			update_interval: 1000,
+			graduation_step: 40
+		});
+	}
 	
 	function onDocumentMouseMove( event ) {
 
 		event.preventDefault();
-
 		mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 		mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+		worldMap.CAMERA_X = -(window.innerWidth / 2 - event.pageX) / 8;
+		worldMap.CAMERA_Y =  800 + (worldMap.CAMERA_X > 0 ? -1 * worldMap.CAMERA_X : worldMap.CAMERA_X);
+		$('#country-name').css({'top':event.pageY - 30,'left':event.pageX});
 	}
 	
 	function onWindowResize() {

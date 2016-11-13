@@ -11,8 +11,9 @@ $icon-font-path: '../fonts/';
   padding: 0.2em 0;
 }
 body {
-  color: #61443e;
-  font-family:Monospace;
+	overflow: hidden;
+  color: #FFF;
+  font-family:Arial, Helvetica, sans-serif;
   font-size:13px;
   text-align:center;
   background-color: #181D21;
@@ -26,4 +27,27 @@ body {
 }
 a {
   color: #a06851;
+}
+
+.footer ul {
+	width: 100%;
+}
+.footer #country-name {
+	padding: 10px 20px 10px;
+	font-size: 20px;
+	font-weight: 200;
+	color: #777;
+	text-shadow: 0 1px 0 #fff;
+	text-align: center;
+	width: 100%;
+}
+
+#header {
+  position: absolute;
+  width: 100%;
+}
+
+#country-name {
+  position: absolute;
+  z-index: 999;
 }

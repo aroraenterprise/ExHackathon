@@ -4,7 +4,10 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.1",
-    "three.js": "threejs#*"
+    "three.js": "threejs#*",
+    "bower": "*",
+    "install": "^1.0.4",
+    "threex.daynight": "*"
   },
   "overrides": {
     "bootstrap-sass": {
