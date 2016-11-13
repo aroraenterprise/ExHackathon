@@ -2,6 +2,7 @@
 	var Viv = function (container, width, height) {
 		var factory = {};
 
+		factory.oldContainerContent = null;
 		factory.container = container;
 		factory.scene = null;
 		factory.renderer = null;
@@ -43,11 +44,9 @@
 			}
 
 			factory.renderer.setSize(factory.width, factory.height);
+			factory.container.html(factory.renderer.domElement);
 
 			factory.projector = new THREE.Projector();
-
-			// append renderer to dom element
-			factory.container.html(factory.renderer.domElement);
 
 			// create a scene
 			factory.scene = new THREE.Scene();
@@ -67,13 +66,12 @@
 			factory.scene.add(factory.sun);
 		}
 
-		function AddToScene(mesh){
+		function AddToScene(mesh) {
 			factory.scene.add(mesh);
 		}
 	}
 
-	var viv = new Viv($("#world-map"));
-	viv.addToScene(new Water(viv));
+	var viv = null;
 })();
 
 // $(function () {

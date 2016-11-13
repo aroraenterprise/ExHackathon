@@ -1,0 +1,27 @@
+#opengl-header {
+  width: 100%;
+  text-align: center;
+
+  h2 {
+    padding-top: 20px;
+  }
+}
+
+#map {
+  width: 100%;
+  height: 700px;
+}
+
+.modal {
+  z-index: 99999;
+
+  .modal-header {
+    .modal-title {
+      color: #161a1f;
+    }
+
+    button {
+      height: 20px;
+    }
+  }
+}
