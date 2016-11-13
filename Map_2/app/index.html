@@ -26,6 +26,7 @@
 	<!-- build:css styles/main.css -->
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/timeslider.css">
+	<link rel="stylesheet" href="styles/slider.css">
 	<!-- endbuild -->
 
 	<!-- build:js scripts/vendor/modernizr.js -->
@@ -41,7 +42,7 @@
 
 		<!-- Header -->
 		<header id="header" class="alt">
-			<h1><a href="index.html">Viv</a></h1>
+			<h1><a href="index.html"><i class="fa fa-fire"></i> Viv</a></h1>
 			<nav id="nav">
 				<ul>
 					<li class="special">
@@ -63,7 +64,7 @@
 		<!-- Banner -->
 		<section id="banner">
 			<div class="inner">
-				<h2>Viv</h2>
+				<h2><i class="fa fa-fire"></i> Viv</h2>
 				<p>Explore your dimensions.<br /> Bringing change to your fingertips.</p>
 				<ul class="actions">
 					<li><a href="#one" class="button special scrolly">Start My Journey</a></li>
@@ -102,10 +103,11 @@
 				</div>
 			</section>
 			<section class="spotlight">
-				<div class="image gl-loader" data-gl="people"><img src="images/pic02.jpg" alt="" /></div>
+				<div class="image gl-loader" data-gl="people"><img src="images/pic02.png" alt="" /></div>
 				<div class="content">
-					<h2><i class="fa fa-cloud"></i> Polluted Water</h2>
-					<p>Our next ambitious journey is to bring better water to millions through better algae control and effective infrastructure.</p>
+					<h2><i class="fa fa-tint"></i> Polluted Water</h2>
+					<p>Our next ambitious journey spans across this earth's beautiful oceans, rivers, wells and wetlands to create better access to safe drinking 
+						 water to millions through better algae control and effective infrastructure.</p>
 					<a type="button" class="btn btn-lg btn-default" href="pollution.html">Better Water</a>
 				</div>
 			</section>
@@ -156,13 +158,13 @@
 						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> My RCP Goal is:</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item rcp-click" data-rcp="26">RCP 2.6</a>
-							<a class="dropdown-item rcp-click" data-rcp="45">RCP 4.5</a>
-							<a class="dropdown-item rcp-click" data-rcp="60">RCP 6.0</a>
-							<a class="dropdown-item rcp-click" data-rcp="85">RCP 8.5</a>
+							<a class="dropdown-item rcp-click" data-rcp="26">Aggressive Conservative Effort: RCP 2.6</a>
+							<a class="dropdown-item rcp-click" data-rcp="45">Extensive Conservative Effort: RCP 4.5</a>
+							<a class="dropdown-item rcp-click" data-rcp="60">Sustainable Effort: RCP 6.0</a>
+							<a class="dropdown-item rcp-click" data-rcp="85">No Change: RCP 8.5</a>
 						</div>
 					</div>
-					<span class="pull-right badge badge-primary" id="rcp-goal">RCP 8.5</span>
+					<span class="pull-right badge badge-primary rcp-goal">RCP 8.5</span>
 					<div id="carto-apicall">
 						<p id="loader"><i class="fa fa-circle-o-notch fa-spin"></i> Loading temperature data from CartoDB...</p>
 						<div id="visualizer" style="color: #000">
@@ -202,13 +204,56 @@
 							<a class="dropdown-item rcp-click" data-rcp="85">RCP 8.5</a>
 						</div>
 					</div>
-					<span class="pull-right badge badge-primary" id="rcp-goal">RCP 8.5</span>
+					<span class="pull-right badge badge-primary rcp-goal">RCP 8.5</span>
 					<div id="carto-apicall">
-						<p id="loader"><i class="fa fa-circle-o-notch fa-spin"></i> Loading temperature data from CartoDB...</p>
-						<div id="visualizer" style="color: #000">
-							<div id="chart-container" style="height: 300px; width: 100%;"></div>
-						</div>
-						<div id="raw-dataset"></div>
+						<p class="slider-class">
+							<h3><i class="fa fa-plug"></i> U.S. Hydro Consumption</h3>
+							<span class="badge danger pull-right" id="energy-badge">$12,000, 000,000,000</span>
+							<input type="text" id="energy-slider" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="0.5"
+								data-slider-value="100" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+							<p>Decrease consumption of oil by moving this slider to left which will allow you to add resources towards infrastructure
+								in renewable energy.</p>
+						</p>
+						<p class="slider-class">
+							<h3><i class="fa fa-plug"></i> Oil/Energy Infrastructure</h3>
+							<span class="badge danger pull-right" id="energy-infra-badge">$1,000,000,000</span>
+							<input type="text" id="energy-infra-slider" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="0.5"
+								data-slider-value="0" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+							<p>Allocate resources towards oil and energy infrastructure to improve efficiency and yield</p>
+						</p>
+						<p class="slider-class">
+							<h3><i class="fa fa-area-chart"></i> Land/Use Consumption</h3>
+							<span class="badge danger pull-right" id="land-badge">$1,000,000,000</span>
+							<input type="text" id="landuse-slider" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="0.5"
+								data-slider-value="50" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+							<p>Decrease land use and deforestation to achieve your RCP goal.</p>								
+						</p>
+						<p class="slider-class">
+							<h3><i class="fa fa-recycle"></i> Renewable Energy Production</h3>
+							<span class="badge danger pull-right" id="renewable-badge">$1,000,000,000</span>
+							<input type="text" id="renewable-slider" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="0.5"
+								data-slider-value="50" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+						</p>
+
+						<p class="slider-class">
+							<h3><i class="fa fa-recycle"></i> Renewable Energy Infrastructure</h3>
+							<span class="badge danger pull-right" id="renewable-infra-badge">$1,000,000,000</span>
+							<input type="text" id="renewable-infra-slider" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="0.5"
+								data-slider-value="0" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+						</p>
+<!--
+						<p class="slider-class">
+							<h3><i class="fa fa-leaf"></i> Agriculture in U.S.</h3>
+							<span class="badge danger pull-right energy-badge">$1,000,000,000</span>
+							<input type="text" id="agriculture-slider" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="0.5"
+								data-slider-value="100" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+						</p>-->
+					</div>
+					<div style="border-top: solid 2px #000; padding-top: 10px">
+						<p>Total Consumption Planned: <span class="pull-right badge" id="total-consumption"></span></p>
+					</div>
+					<div style="padding-top: 10px">
+						<p>Budget in Fiscal 2016: <span class="pull-right badge" id="total-budget"></span></p>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -265,6 +310,7 @@
 	<script src="js/main.js"></script>
 
 	<script src="vendor/canvasjs.min.js"></script>
+	<script src="vendor/bootstrap-slider.js"></script>
 	<script src="vendor/three.min.js"></script>
 	<script src="vendor/Projector.js"></script>
 	<script src="vendor/water-material.js"></script>
