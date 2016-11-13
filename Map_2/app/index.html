@@ -11,6 +11,18 @@
 	<!-- endbower -->
 	<!-- endbuild -->
 
+	<style>
+		.axis--x path {
+			display: none;
+		}
+		
+		.line {
+			fill: none;
+			stroke: steelblue;
+			stroke-width: 1.5px;
+		}
+	</style>
+
 	<!-- build:css styles/main.css -->
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/timeslider.css">
@@ -93,59 +105,22 @@
 				<div class="image gl-loader" data-gl="people"><img src="images/pic02.jpg" alt="" /></div>
 				<div class="content">
 					<h2><i class="fa fa-cloud"></i> Polluted Water</h2>
-					<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+					<p>Our next ambitious journey is to bring better water to millions through better algae control and effective infrastructure.</p>
 					<a type="button" class="btn btn-lg btn-default" href="pollution.html">Better Water</a>
 				</div>
 			</section>
 		</section>
 
-		<!-- Three -->
-		<section id="three" class="wrapper style3 special">
-			<div class="inner">
-				<header class="major">
-					<h2>Accumsan mus tortor nunc aliquet</h2>
-					<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br /> fringilla tincidunt. Nullam dui leo
-						Aenean mi ligula, rhoncus ullamcorper.</p>
-				</header>
-				<ul class="features">
-					<li class="icon fa-paper-plane-o">
-						<h3>Arcu accumsan</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon fa-laptop">
-						<h3>Ac Augue Eget</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon fa-code">
-						<h3>Mus Scelerisque</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon fa-headphones">
-						<h3>Mauris Imperdiet</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon fa-heart-o">
-						<h3>Aenean Primis</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon fa-flag-o">
-						<h3>Tortor Ut</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-					</li>
-				</ul>
-			</div>
-		</section>
 
 		<!-- CTA -->
 		<section id="cta" class="wrapper style4">
 			<div class="inner">
 				<header>
-					<h2>Arcue ut vel commodo</h2>
-					<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+					<h2>Thank You</h2>
+					<p>Let us send you an email with your goal.</p>
 				</header>
 				<ul class="actions vertical">
-					<li><a href="#" class="button fit special">Activate</a></li>
-					<li><a href="#" class="button fit">Learn More</a></li>
+					<li><a href="#" class="button fit special">Send Me an Email</a></li>
 				</ul>
 			</div>
 		</section>
@@ -161,7 +136,8 @@
 			</ul>
 			<ul class="copyright">
 				<li>&copy; VIV</li>
-				<li>Design: Saj Arora</a></li>
+				<li>Design: Saj Arora</a>
+				</li>
 			</ul>
 		</footer>
 
@@ -179,17 +155,29 @@
 				<div class="modal-body">
 					<div id="carto-apicall">
 						<p id="loader"><i class="fa fa-circle-o-notch fa-spin"></i> Loading temperature data from CartoDB...</p>
-						<div id="raw-dataset"></div>
+						<div id="raw-dataset" style="display:none"></div>
 					</div>
-
+					<div id="visualizer">
+						My RCP Goal: 
+						<div class="dropdown open">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> RCP Goal</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</div>
+						<div id="chart-container" style="height: 300px; width: 100%;"></div>
+					</div>
 					<div id="carto-dashboard" style="display:none">
 						<iframe width="100%" height="700" frameborder="0" src="https://sajarora.carto.com/builder/b7bbdc1a-a9a9-11e6-931c-0ee66e2c9693/embed"
 							allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" id="carto-graphs-btn">Visualize</button>	
-					<button type="button" class="btn btn-primary" id="carto-maps-btn" style="display:none">Carto Maps</button>					
+					<button type="button" class="btn btn-primary" id="carto-graphs-btn">Visualize</button>
+					<button type="button" class="btn btn-primary" id="carto-maps-btn" style="display:none">Carto Maps</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -242,13 +230,13 @@
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="js/main.js"></script>
 
-	<script src="vendor/d3.min.js"></script>
+	<script src="vendor/canvasjs.min.js"></script>
 	<script src="vendor/three.min.js"></script>
 	<script src="vendor/Projector.js"></script>
 	<script src="vendor/water-material.js"></script>
 
 
-	<script src="vendor/d3-threeD.js"></script>
+	<!--<script src="vendor/d3-threeD.js"></script>-->
 	<script src="vendor/Detector.js"></script>
 	<script src="vendor/timeslider.js"></script>
 
