@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>VIV</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<style>
+		.axis--x path {
+			display: none;
+		}
+		
+		.line {
+			fill: none;
+			stroke: steelblue;
+			stroke-width: 1.5px;
+		}
+	</style>
+
+	<!-- build:css styles/main.css -->
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/timeslider.css">
+	<link rel="stylesheet" href="styles/slider.css">
+	<!-- endbuild -->
+
+	<!-- build:js scripts/vendor/modernizr.js -->
+	<script src="/bower_components/modernizr/modernizr.js"></script>
+	<!-- endbuild -->
+
+</head>
+
+<body class="landing">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1><a href="index.html"><i class="fa fa-fire"></i> Viv</a></h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<div id="menu">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="generic.html">Generic</a></li>
+								<li><a href="elements.html">Elements</a></li>
+								<li><a href="#">Sign Up</a></li>
+								<li><a href="#">Log In</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Banner -->
+		<section id="banner">
+			<div class="inner">
+				<h2><i class="fa fa-fire"></i> Viv</h2>
+				<p>Explore your dimensions.<br /> Bringing change to your fingertips.</p>
+				<ul class="actions">
+					<li><a href="#one" class="button special scrolly">Start My Journey</a></li>
+				</ul>
+			</div>
+			<a href="#one" class="more scrolly">Learn More</a>
+		</section>
+
+		<!-- One -->
+		<section id="one" class="wrapper style1 special">
+			<div class="inner">
+				<header class="major">
+					<h2>A Harmonious World</h2>
+					<p>Climate Change and Polluted Waters are emerging pandemics.
+						<strong>Viv</strong> visualizes and invokes discussion to harness the creativity from agencies to tackle these incredible
+						challenges.
+					</p>
+				</header>
+				<ul class="icons major">
+					<li><span class="icon fa-cloud major style1"><span class="label">Climate Change</span></span>
+					</li>
+					<li><span class="icon fa-tint major style3"><span class="label">Polluted Waters</span></span>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Two -->
+		<section id="two" class="wrapper alt style2">
+			<section class="spotlight">
+				<div class="image gl-loader" data-gl="climate" id="climate-gl"><img src="images/pic01.png" alt="" /></div>
+				<div class="content">
+					<h2><i class="fa fa-cloud"></i> Climate Change</h2>
+					<p>Focus on two landmarks to see weather forecasts and how CO2 emission is impacting maximum and minimum temperatures.</p>
+					<button type="button" class="btn btn-default" id="carto-explorer-btn" data-toggle="modal" data-target="#carto-climate-explorer">Launch Carto Explorer</button>
+				</div>
+			</section>
+			<section class="spotlight">
+				<div class="image gl-loader" data-gl="people"><img src="images/pic02.png" alt="" /></div>
+				<div class="content">
+					<h2><i class="fa fa-tint"></i> Polluted Water</h2>
+					<p>Our next ambitious journey spans across this earth's beautiful oceans, rivers, wells and wetlands to create better access to safe drinking 
+						 water to millions through better algae control and effective infrastructure.</p>
+					<a type="button" class="btn btn-lg btn-default" href="pollution.html">Better Water</a>
+				</div>
+			</section>
+		</section>
+
+
+		<!-- CTA -->
+		<section id="cta" class="wrapper style4">
+			<div class="inner">
+				<header>
+					<h2>Thank You</h2>
+					<p>Let us send you an email with your goal.</p>
+				</header>
+				<ul class="actions vertical">
+					<li><a href="#" class="button fit special">Send Me an Email</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+				<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; VIV</li>
+				<li>Design: Saj Arora</a>
+				</li>
+			</ul>
+		</footer>
+	</div>
+
+
+
+	<div class="modal fade" id="carto-climate-explorer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button pull-right" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Carto Climate Explorer</h4>
+				</div>
+				<div class="modal-body">
+					<div class="dropdown open" style="display:inline-block">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> My RCP Goal is:</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item rcp-click" data-rcp="26">Aggressive Conservative Effort: RCP 2.6</a>
+							<a class="dropdown-item rcp-click" data-rcp="45">Extensive Conservative Effort: RCP 4.5</a>
+							<a class="dropdown-item rcp-click" data-rcp="60">Sustainable Effort: RCP 6.0</a>
+							<a class="dropdown-item rcp-click" data-rcp="85">No Change: RCP 8.5</a>
+						</div>
+					</div>
+					<span class="pull-right badge badge-primary rcp-goal">RCP 8.5</span>
+					<div id="carto-apicall">
+						<p id="loader"><i class="fa fa-circle-o-notch fa-spin"></i> Loading temperature data from CartoDB...</p>
+						<div id="visualizer" style="color: #000">
+							<div id="chart-container" style="height: 300px; width: 100%;"></div>
+						</div>
+						<div id="raw-dataset"></div>
+					</div>
+					<div id="carto-dashboard" style="display:none">
+						<iframe width="100%" height="700" frameborder="0" src="https://sajarora.carto.com/builder/b7bbdc1a-a9a9-11e6-931c-0ee66e2c9693/embed"
+							allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="carto-graphs-btn">Visualize</button>
+					<button type="button" class="btn btn-primary" id="tradeoff-btn" data-toggle="modal" data-target="#tradeoff-explorer">Analytics</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="tradeoff-explorer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button pull-right" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Achieving RCP</h4>
+				</div>
+				<div class="modal-body">
+					<div class="dropdown open" style="display:inline-block">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> My RCP Goal is:</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item rcp-click" data-rcp="26">RCP 2.6</a>
+							<a class="dropdown-item rcp-click" data-rcp="45">RCP 4.5</a>
+							<a class="dropdown-item rcp-click" data-rcp="60">RCP 6.0</a>
+							<a class="dropdown-item rcp-click" data-rcp="85">RCP 8.5</a>
+						</div>
+					</div>
+					<span class="pull-right badge badge-primary rcp-goal">RCP 8.5</span>
+					<div id="carto-apicall">
+						<p class="slider-class">
+							<h3><i class="fa fa-plug"></i> U.S. Hydro Consumption</h3>
+							<span class="badge danger pull-right" id="energy-badge">$12,000, 000,000,000</span>
+							<input type="text" id="energy-slider" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="0.5"
+								data-slider-value="100" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+							<p>Decrease consumption of oil by moving this slider to left which will allow you to add resources towards infrastructure
+								in renewable energy.</p>
+						</p>
+						<p class="slider-class">
+							<h3><i class="fa fa-plug"></i> Oil/Energy Infrastructure</h3>
+							<span class="badge danger pull-right" id="energy-infra-badge">$1,000,000,000</span>
+							<input type="text" id="energy-infra-slider" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="0.5"
+								data-slider-value="0" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+							<p>Allocate resources towards oil and energy infrastructure to improve efficiency and yield</p>
+						</p>
+						<p class="slider-class">
+							<h3><i class="fa fa-area-chart"></i> Land/Use Consumption</h3>
+							<span class="badge danger pull-right" id="land-badge">$1,000,000,000</span>
+							<input type="text" id="landuse-slider" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="0.5"
+								data-slider-value="50" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+							<p>Decrease land use and deforestation to achieve your RCP goal.</p>								
+						</p>
+						<p class="slider-class">
+							<h3><i class="fa fa-recycle"></i> Renewable Energy Production</h3>
+							<span class="badge danger pull-right" id="renewable-badge">$1,000,000,000</span>
+							<input type="text" id="renewable-slider" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="0.5"
+								data-slider-value="50" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+						</p>
+
+						<p class="slider-class">
+							<h3><i class="fa fa-recycle"></i> Renewable Energy Infrastructure</h3>
+							<span class="badge danger pull-right" id="renewable-infra-badge">$1,000,000,000</span>
+							<input type="text" id="renewable-infra-slider" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="0.5"
+								data-slider-value="0" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+						</p>
+<!--
+						<p class="slider-class">
+							<h3><i class="fa fa-leaf"></i> Agriculture in U.S.</h3>
+							<span class="badge danger pull-right energy-badge">$1,000,000,000</span>
+							<input type="text" id="agriculture-slider" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="0.5"
+								data-slider-value="100" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+						</p>-->
+					</div>
+					<div style="border-top: solid 2px #000; padding-top: 10px">
+						<p>Total Consumption Planned: <span class="pull-right badge" id="total-consumption"></span></p>
+					</div>
+					<div style="padding-top: 10px">
+						<p>Budget in Fiscal 2016: <span class="pull-right badge" id="total-budget"></span></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--<div id="header">
+	<div id="ts" class="time-slider"></div>
+		<h2>Explore your dimensions</h2>
+	</div>-->
+	<!-- Main content
+    ================================================== -->
+	<!--<div class="container2" id="main_continer">
+		<div id="world-map"></div>
+	</div>
+	<div id="country-name"></li>-->
+
+	<!-- javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+
+
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="/bower_components/jquery/dist/jquery.js"></script>
+	<script src="/bower_components/modernizr/modernizr.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:js scripts/plugins.js -->
+	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+	<!-- endbuild -->
+
+	<!-- build:js scripts/main.js -->
+	<script src="js/jquery.scrollex.min.js"></script>
+	<script src="js/jquery.scrolly.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="js/main.js"></script>
+
+	<script src="vendor/canvasjs.min.js"></script>
+	<script src="vendor/bootstrap-slider.js"></script>
+	<script src="vendor/three.min.js"></script>
+	<script src="vendor/Projector.js"></script>
+	<script src="vendor/water-material.js"></script>
+
+
+	<!--<script src="vendor/d3-threeD.js"></script>-->
+	<script src="vendor/Detector.js"></script>
+	<script src="vendor/timeslider.js"></script>
+
+	<script src="scripts/water.js" type="text/javascript"></script>
+	<script src="scripts/main.js" type="text/javascript"></script>
+	<script src="scripts/climate.js" type="text/javascript"></script>
+
+	<!-- endbuild -->
+
+</body>
+
+</html>
