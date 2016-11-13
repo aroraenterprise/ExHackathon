@@ -3,10 +3,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Ocean - Jérémy BOUNY</title>
+	<title>Polluted Waters</title>
 	<link href="styles/pollution-style.css" rel="stylesheet">
 	<link rel="stylesheet" href="styles/timeslider.css">
 	<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="mobile-web-app-capable" content="yes" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -16,12 +17,14 @@
 	<div id="canvas-3d" class="viewer"></div>
 	<div id="float-header">
 		<div id="ts" class="time-slider"></div>
+		<div id="zoom-slider123" style="width:100%;margin-bottom:10px;"></div>
 		<h2>Explore your dimensions</h2>
 		<h3><i class="fa fa-tint"></i> Polluted Waters</h3>
 	</div>
 	<!-- External libraries -->
 	<script src="js/jquery.min.js"></script>
 	<script src="vendor/three.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 	<script src="vendor/libs/RequestAnimationFrame.js"></script>
 	<script src="vendor/libs/three/OrbitControls.js"></script>

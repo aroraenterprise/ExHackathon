@@ -59,6 +59,20 @@
 
     <!-- build:js scripts/main.js -->
 
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script>
+// get the viz.json url from the CARTO Editor
+// - click on visualize
+// - create new visualization
+// - make visualization public
+// - click on publish
+// - go to API tab
+
+window.onload = function() {
+  cartodb.createVis('map', 'http://documentation.carto.com/api/v2/viz/b7bbdc1a-a9a9-11e6-931c-0ee66e2c9693/viz.json');
+}
+</script>
+
 </body>
 
 </html>
