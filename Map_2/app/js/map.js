@@ -240,7 +240,6 @@ $(function(){
 	};
 
 	function init() {
-        console.log('here');
 		
 		$.when(	$.getJSON("data/countries.json") ).then(function(data){ 
 			
