@@ -140,7 +140,6 @@
 				</li>
 			</ul>
 		</footer>
-
 	</div>
 
 
@@ -153,22 +152,23 @@
 					<h4 class="modal-title" id="myModalLabel">Carto Climate Explorer</h4>
 				</div>
 				<div class="modal-body">
+					<div class="dropdown open" style="display:inline-block">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> My RCP Goal is:</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item rcp-click" data-rcp="26">RCP 2.6</a>
+							<a class="dropdown-item rcp-click" data-rcp="45">RCP 4.5</a>
+							<a class="dropdown-item rcp-click" data-rcp="60">RCP 6.0</a>
+							<a class="dropdown-item rcp-click" data-rcp="85">RCP 8.5</a>
+						</div>
+					</div>
+					<span class="pull-right badge badge-primary" id="rcp-goal">RCP 8.5</span>
 					<div id="carto-apicall">
 						<p id="loader"><i class="fa fa-circle-o-notch fa-spin"></i> Loading temperature data from CartoDB...</p>
-						<div id="raw-dataset" style="display:none"></div>
-					</div>
-					<div id="visualizer">
-						My RCP Goal: 
-						<div class="dropdown open">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false"> RCP Goal</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item" href="#">Action</a>
-								<a class="dropdown-item" href="#">Another action</a>
-								<a class="dropdown-item" href="#">Something else here</a>
-							</div>
+						<div id="visualizer" style="color: #000">
+							<div id="chart-container" style="height: 300px; width: 100%;"></div>
 						</div>
-						<div id="chart-container" style="height: 300px; width: 100%;"></div>
+						<div id="raw-dataset"></div>
 					</div>
 					<div id="carto-dashboard" style="display:none">
 						<iframe width="100%" height="700" frameborder="0" src="https://sajarora.carto.com/builder/b7bbdc1a-a9a9-11e6-931c-0ee66e2c9693/embed"
@@ -177,7 +177,41 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" id="carto-graphs-btn">Visualize</button>
-					<button type="button" class="btn btn-primary" id="carto-maps-btn" style="display:none">Carto Maps</button>
+					<button type="button" class="btn btn-primary" id="tradeoff-btn" data-toggle="modal" data-target="#tradeoff-explorer">Analytics</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="tradeoff-explorer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button pull-right" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Achieving RCP</h4>
+				</div>
+				<div class="modal-body">
+					<div class="dropdown open" style="display:inline-block">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> My RCP Goal is:</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item rcp-click" data-rcp="26">RCP 2.6</a>
+							<a class="dropdown-item rcp-click" data-rcp="45">RCP 4.5</a>
+							<a class="dropdown-item rcp-click" data-rcp="60">RCP 6.0</a>
+							<a class="dropdown-item rcp-click" data-rcp="85">RCP 8.5</a>
+						</div>
+					</div>
+					<span class="pull-right badge badge-primary" id="rcp-goal">RCP 8.5</span>
+					<div id="carto-apicall">
+						<p id="loader"><i class="fa fa-circle-o-notch fa-spin"></i> Loading temperature data from CartoDB...</p>
+						<div id="visualizer" style="color: #000">
+							<div id="chart-container" style="height: 300px; width: 100%;"></div>
+						</div>
+						<div id="raw-dataset"></div>
+					</div>
+				</div>
+				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>

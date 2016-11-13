@@ -14,7 +14,6 @@
 
 .modal {
   z-index: 99999;
-
   .modal-header {
     .modal-title {
       color: #161a1f;
@@ -29,8 +28,14 @@
     h2,
     h3,
     p,
+    button,
+    li,
+    a,
     pre {
       color: #161a1f !important;
+    }
+    #raw-data {
+    overflow-y: scroll;      
     }
   }
 }
