@@ -27,9 +27,9 @@
 			$body.addClass('is-loading');
 
 			$window.on('load', function() {
-				window.setTimeout(function() {
+				$("body").on('click', function() {
 					$body.removeClass('is-loading');
-				}, 100);
+				});
 			});
 
 		// Mobile?
